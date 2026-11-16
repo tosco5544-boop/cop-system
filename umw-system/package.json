@@ -1,0 +1,15 @@
+{
+  "name": "umw-system",
+  "private": true,
+  "type": "module",
+  "description": "UMW 社内システム（認証・勤怠・チャット・ワークフロー） Cloudflare Pages + D1",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "db:init:local": "wrangler d1 execute umw-db --local --file=./schema.sql",
+    "db:init:remote": "wrangler d1 execute umw-db --remote --file=./schema.sql",
+    "test": "node --experimental-sqlite test/api.test.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

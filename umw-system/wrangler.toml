@@ -1,0 +1,10 @@
+# Cloudflare Pages の設定
+# database_id は「wrangler d1 create umw-db」または Cloudflare ダッシュボード（D1）で表示される ID に書き換えてください。
+name = "umw-system"
+pages_build_output_dir = "public"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "DB"                 # コードからは env.DB で参照（変更しないでください）
+database_name = "umw-db"
+database_id = "ここにD1のデータベースIDを貼り付け"
