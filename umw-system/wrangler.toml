@@ -7,4 +7,4 @@ compatibility_date = "2025-01-01"
 [[d1_databases]]
 binding = "DB"                 # コードからは env.DB で参照（変更しないでください）
 database_name = "umw-db"
-database_id = "ここにD1のデータベースIDを貼り付け"
+database_id = "577cbb3f-5641-4b1a-a542-a1dbc0912cf7"
