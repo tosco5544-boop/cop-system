@@ -1,0 +1,19 @@
+# Cloudflare Workers の設定
+# ・name は Cloudflare で作る Worker の名前と同じにしてください（違うとデプロイに失敗します）
+# ・database_id は D1 の画面に表示される「データベースID」に書き換えてください
+name = "umw-system"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+keep_vars = true               # ダッシュボードで設定した変数をデプロイで消さない
+
+# 画面（HTML/CSS/JS）。ファイルがあればそれを返し、なければ src/index.js（API）が処理する
+[assets]
+directory = "./public"
+
+[[d1_databases]]
+binding = "DB"                 # コードからは env.DB で参照（変更しないでください）
+database_name = "umw-db"
+database_id = "ここにD1のデータベースIDを貼り付け"
+
+[observability]
+enabled = true                 # ダッシュボードでエラーログを確認できるようにする

@@ -1,0 +1,3 @@
+UPDATE wf_routes SET steps_json = '[{"name":"施設長承認","type":"deptTitle","target":"施設長"},{"name":"事業部長承認","type":"title","target":"事業部長"},{"name":"経理確認","type":"title","target":"経理責任者","cond":{"label":"金額","op":">=","value":100000}},{"name":"社長決裁","type":"title","target":"社長","cond":{"label":"金額","op":">=","value":1000000}}]', updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = 'r1';
+UPDATE wf_routes SET steps_json = '[{"name":"施設長承認","type":"deptTitle","target":"施設長"},{"name":"事業部長承認","type":"title","target":"事業部長"}]', updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = 'r2';
+UPDATE employees SET title = '施設長', updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE title = '所長';
